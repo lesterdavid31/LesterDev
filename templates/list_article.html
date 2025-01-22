@@ -1,0 +1,27 @@
+<h1>Noticias de la industría Tecnológica</h1>
+
+<ul>
+    {% for article in articles  %}
+    <li>{{article.title}}</li>
+    <p>{{article.published_date|date:"F-j-Y"}}</p>
+
+
+    <a href="{% url 'edit_article' article.id %}">
+        <button>Editar</button>
+    </a>
+    
+    <form action="{% url "delete_article" article.id %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Eliminar Artículo">    
+    </form>
+</ul>
+    {% endfor %}
+
+<form action="logout" method="get">
+    {% csrf_token %}
+    <input type="submit" value="Cerrar sesión">
+</form>
+
+<a href="{% url 'create_article' %}">
+    <button>Añadir</button>
+</a>

@@ -1,0 +1,319 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #FDFDFD; /*Color del body*/
+  /* background: linear-gradient(to right, #91eae4, #3073ee, #91eae4); */
+  overflow: hidden; /* Evitar el desplazamiento del body */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: first baseline;
+  height: auto;
+  background-color: #ADB3BC; /*color del header*/   
+  width: 100%;
+  padding: 5px;
+  height: 45px;
+  border-radius: 5px;
+  position: fixed; /* Hacer que la barra de navegación sea fija */
+  top: 0;
+  z-index: 1000;
+}
+
+#contenedor_logo{
+    margin:  0 10px;
+    background-color: #050606; /*color del contenedor del logo*/
+    padding: 0 15px;
+    width: auto;
+
+}
+
+#logo{
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: bold;
+    color: white;
+}
+
+#contenedor_nav{
+  margin: 10px 10px;
+  background-color: #D8D7D5; /*color del contenedor del nav*/
+  padding: 10px;
+
+}
+
+#nav{
+    display: flex;
+    gap: 40px;
+}
+
+.nav_link{
+    font: 20px;
+    font-family:monospace;
+    color: #050606;
+    text-decoration: none;
+}
+.nav_link:hover{
+    color: white;        /* Color al pasar el ratón */
+    text-decoration: underline ;
+}
+
+/* Contenedor principal - Estilo de tarjetas*/
+
+#conteiner_main {
+  width: 1200px;
+  margin: 70px auto 5px auto; /* Ajustar el margen superior para evitar la superposición con la barra de navegación */
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: #ADB3BC; /*color del contenedor de las tarjetas*/
+  border-radius: 10px;
+  overflow: auto; /* Permitir el desplazamiento del contenido */
+  max-height: calc(100vh - 70px); /* Ajustar la altura máxima para evitar la superposición con la barra de navegación */
+}
+
+/* Diseño de la cuadrícula de tarjetas */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Estilo de cada tarjeta */
+.card {
+  background: #050606 ; /*Color del fondo de las tarjetas*/
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(248, 248, 248, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+  border:1px solid #000000;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen superior de la tarjeta */
+.card__header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Etiqueta de categoría */
+.tag {
+  display: inline-block;
+  background-color: #FDFDFD;
+  color: #050606;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+/* Texto del cuerpo */
+.card__body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: first baseline;
+}
+
+.card__body h4 {
+  margin: 0;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.card__body a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__body a:hover {
+  color: #007bff;
+}
+
+/* Pie de la tarjeta */
+.card__footer {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #ffffff;
+}
+
+/* Imagen de usuario */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user__image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+
+.user__info small {
+  color: #ffffff;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+
+
+
+
+/*Article css*/
+
+#content_main_article {
+  width: 65%;
+  min-height: 800px;
+  margin: 5px auto;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #000000; /*color del contenedor de las tarjetas*/
+  border-radius: 10px;
+  overflow: hidden; 
+  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+  overflow-y: auto; /* Permitir el desplazamiento vertical del contenido del artículo */
+  max-height: calc(100vh - 70px); /* Ajustar la altura máxima para evitar la superposición con la barra de navegación */
+}
+
+.title_news{
+  background-color: #0C0A09;
+  margin: 5px;
+  padding: 3px;
+  width: auto;
+}
+
+
+.title_news h1 {
+  font-size: 2rem;
+  line-height: 1.5; /* Espaciado entre líneas */
+  margin-bottom: 20px;
+  text-align: center;
+  color:#FDFDFD;
+}
+
+
+
+.content_news{
+  background-color: #0A0A0A;
+  margin: 5px;
+  padding: 3px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+}
+.content_news p {
+  
+  font-family: Arial;
+  line-height: 1.8; /* Espaciado entre líneas */
+  margin: 10px 0;
+  text-align: justify;
+  font-size: 1.1rem;
+  color: #ADB3BC;
+}
+
+#footer {
+  width: 65%; /* Ajuste al ancho del contenedor principal */
+
+  margin: 20px auto; /* Centra horizontalmente */
+  display: grid; /* Activa CSS Grid */
+  grid-template-rows: auto auto; /* Dos filas: una para el contenido principal y otra para la parte inferior */
+  grid-template-columns: 1fr 1fr; /* Dos columnas para organizar redes sociales y fecha */
+  gap: 10px; /* Espaciado entre las áreas */
+  font-size: 1rem;
+  background-color: #0A0A0A;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#footer .mi_nombre {
+  color: #FDFDFD;
+  grid-column: 1 / 3; /* Ocupa ambas columnas */
+  text-align: center;
+  font-size: 1.5em;
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+/* Área de redes sociales */
+#footer .redes_sociales {
+  color: #D8D7D5;
+  grid-row: 2; /* Segunda fila */
+  grid-column: 1; /* Primera columna */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px; /* Espaciado entre enlaces */
+}
+
+.redes_sociales a {
+  display: flex;
+  align-items: center; /* Alinea el texto con el ícono */
+  text-decoration: none;
+  color:#ffffff;
+  font-size: 1.1rem;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.redes_sociales a i {
+  font-size: 1.5rem; /* Tamaño del ícono */
+  margin-right: 10px; /* Espacio entre ícono y texto */
+  color: #0077B5; /* Color predeterminado del ícono */
+  transition: color 0.3s ease;
+}
+
+.redes_sociales a:hover {
+  color: #007BFF; /* Cambia el color del texto al pasar el cursor */
+}
+
+.redes_sociales a:hover i {
+  color: #0056b3; /* Cambia el color del ícono al pasar el cursor */
+}
+
+
+/* Área de fecha */
+#footer .date_publish {
+  grid-row: 2; /* Segunda fila */
+  grid-column: 2; /* Segunda columna */
+  text-align: right;
+  font-size: 1rem;
+  font-style: italic;
+  color:aliceblue;
+}
+
+
+

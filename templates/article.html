@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load static %}
+
+  <div id="content_main_article">
+    <ul>
+      <div class="title_news">
+        <h1>{{ article.title }}</h1>
+      </div>
+
+      <div class="content_news">
+        <p>{{ article.content|safe }}</p>
+      </div>
+    </ul>
+  </div>
+  
+  <footer id="footer">
+    <!-- Nombre y descripción -->
+    <div class="mi_nombre">
+      <h3>LesterDev</h3>
+      <p>Ingeniero En Sistemas | Data Scientist | Python developer</p>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="redes_sociales">
+      <p>Encuéntrame en mis redes sociales</p>
+      <a href="https://www.linkedin.com/in/lesteryuman3137/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/lesterdavid31" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <!-- Fecha de publicación -->
+    <p class="date_publish">Publicado: {{ article.published_date }}</p>
+  </footer>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LesterDev_Admin</title>
+     <!-- Incluir el script de CKEditor 5 -->
+     <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+</head>
+<body>
+    <a href="{% url 'article_list' %}">
+        <h1>Lista de Noticas</h1>
+    </a>
+    
+    <h2>Actualizar Artículo</h2>
+    
+    <form action= {% url "edit_article" article_id=article.id %} method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title">Titulo del artículo</label>
+        <input type="text" id="title" name="title">
+        <label for="content">Contenido del artículo</label>
+        <textarea name="content" id="id_content"></textarea> 
+        <label for="image">Subir imagen</label>
+        <input type="file" id="image" name="image" accept="image/*"> 
+        <input type="submit" value="Guardar Cambios">  
+    </form>
+    
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#id_content'), {
+                // Configuración adicional si es necesario
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+    
+</body>
+</html>

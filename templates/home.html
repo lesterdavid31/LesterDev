@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load static %}
+
+  <div id="conteiner_main">
+    <div class="container">
+      {% for article in articles %}
+        <!-- Tarjeta adaptada -->
+        <div class="card">
+          <div class="card__header">
+              <img id="img" src="{{ article.image.url }}" alt="{{ article.title }}" class="card__image" />
+          </div>
+          <div class="card__body">
+            <span class="tag tag-blue">Tecnologia</span>
+            <a id="news_title" href="{% url 'article' article.id %}"><h4>{{ article.title }}</h4></a>
+          </div>
+          <div class="card__footer">
+            <div class="user">
+              <img src="{% static 'img\lesterdev.ico' %}" alt="user__image" class="user__image" />
+              <div class="user__info">
+                <small>LesterDev {{ article.published_date|date:'F-j-Y' }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

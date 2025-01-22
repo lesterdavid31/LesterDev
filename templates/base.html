@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LesterDev</title>
+    <link rel="stylesheet" href="{% static 'css\home.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div id="contenedor_logo">
+            <p id="logo">LesterDev</p>
+        </div>
+        <div id="contenedor_nav">
+            <nav id="nav">
+                <a class="nav_link" href="{% url 'home' %}">Noticas Tecnologícas</a>
+                <a class="nav_link" href="{% url 'redes' %}">Redes</a>
+                <a class="nav_link" href="with_me.html">Sobre Mi</a>
+                <a class="nav_link" href="#">Asesoria</a>
+                <a class="nav_link" href="#">Tienda</a>
+                </nav>
+        </div>
+    </header>
+    {% block content %}
+    
+    {% endblock content %}
+    
+</body>
+</html>
